@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/reflex-arm/fpga/dma_driver/Module.symvers := sed 's/\.ko$$/\.o/' /home/ubuntu/reflex-arm/fpga/dma_driver/modules.order | scripts/mod/modpost -m -a  -o /home/ubuntu/reflex-arm/fpga/dma_driver/Module.symvers -e -i Module.symvers   -T -

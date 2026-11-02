@@ -1,0 +1,66 @@
+{
+  "units": "mm",
+  "passed": true,
+  "parts": [
+    {
+      "file": "stl/01_grip_block_36x30x20mm.stl",
+      "sha256": "1209790ab0b6fa13e1759177c463ac42806b5669bd3037a3bab450f54cbed505",
+      "triangles": 1612,
+      "unique_vertices_mm_quantized": 808,
+      "dimensions_mm": [
+        36.0,
+        30.0,
+        20.0
+      ],
+      "min_triangle_area_mm2": 0.0004815498183683676,
+      "signed_volume_mm3": 19912.2098483863,
+      "nonmanifold_edges": 0,
+      "all_edges_have_two_incident_triangles": true
+    },
+    {
+      "file": "stl/02_peg_d16_h42mm.stl",
+      "sha256": "43632279745c7d05e90f00ea7f7ad1c39c0be1ec2ed70237ef1e1ac2f34a2dd6",
+      "triangles": 1344,
+      "unique_vertices_mm_quantized": 674,
+      "dimensions_mm": [
+        26.0,
+        26.0,
+        42.0
+      ],
+      "min_triangle_area_mm2": 0.3926287468076555,
+      "signed_volume_mm3": 12252.883835296028,
+      "nonmanifold_edges": 0,
+      "all_edges_have_two_incident_triangles": true
+    },
+    {
+      "file": "stl/03_socket_50x50x18mm_hole16p4.stl",
+      "sha256": "cf267463dbe0ce10206f08909aecf04e931db995aa7d43c665ea6a99544fd06e",
+      "triangles": 2606,
+      "unique_vertices_mm_quantized": 1305,
+      "dimensions_mm": [
+        50.0,
+        50.0,
+        18.0
+      ],
+      "min_triangle_area_mm2": 0.040138891469444306,
+      "signed_volume_mm3": 41573.24516993699,
+      "nonmanifold_edges": 0,
+      "all_edges_have_two_incident_triangles": true
+    },
+    {
+      "file": "stl/04_sorting_tray_80x65x12mm.stl",
+      "sha256": "4475ad7e63dcab3abfda669e906e21f16f2511699ec413ec9d9842b842888843",
+      "triangles": 612,
+      "unique_vertices_mm_quantized": 308,
+      "dimensions_mm": [
+        80.0,
+        65.0,
+        12.0
+      ],
+      "min_triangle_area_mm2": 0.1009854511351526,
+      "signed_volume_mm3": 22789.711314291,
+      "nonmanifold_edges": 0,
+      "all_edges_have_two_incident_triangles": true
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Upstream model: https://github.com/Seeed-Projects/reBot-DevArm
+Pinned commit: 6c2bb32b3f7f430c58a37cf93d459d07ee99d736
+Original upstream source, license files, copyright notices and VENDOR_MANIFEST.json are preserved under simulation/assets/vendor/seeed_b601_rs/.
+The upstream root declares CERN-OHL-W-2.0; MJCF subdirectory contains its own Apache-2.0, CERN-OHL-W-2.0 and Three-MIT notices. Those notices apply to their respective upstream components.
+Project modifications are separated in simulation/assets/sim_official_b601_rs/ and documented in CONVERSION_AUDIT.json; all corresponding editable source used by this submission is provided. This project does not claim authorship of the Seeed mechanical design, MuJoCo, PyTorch or AMD/Xilinx IP.
+The package removes host/command header lines from two FPGA reports and changes private endpoint defaults to loopback for publication. No timing/resource values, simulation force limits, outcomes or native controller math were changed. No broad new license is imposed on upstream components.

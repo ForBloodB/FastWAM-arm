@@ -1,0 +1,8 @@
+B601_RS.urdf is a read-only copy of the model already present at
+/home/aup/reBotArm_control_py/urdf/RS/urdf/ReBot_Arm_RS.urdf
+on the user-authorized AI PC. Source repository family:
+https://github.com/Seeed-Projects/reBot-DevArm
+
+Expected SHA256: 3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d
+Only geometric transforms and limits are used. Referenced visual/collision meshes
+are not bundled; the kinematics check does not load them or validate collision.

@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package robotstack.v1;
+
+service RobotService {
+  rpc GetState(GetStateRequest) returns (RobotState);
+  rpc ExecuteJointTrajectory(JointTrajectory) returns (CommandResult);
+  rpc Cancel(CancelRequest) returns (CommandResult);
+  rpc Heartbeat(HeartbeatRequest) returns (HeartbeatReply);
+}
+
+message GetStateRequest {}
+
+message JointValue {
+  string name = 1;
+  double position_rad = 2;
+  double max_velocity_rad_s = 3;
+}
+
+message JointTrajectory {
+  uint64 sequence = 1;
+  int64 issued_unix_ns = 2;
+  int64 deadline_unix_ns = 3;
+  uint32 duration_ms = 4;
+  repeated JointValue joints = 5;
+}
+
+message JointState {
+  string name = 1;
+  double position_rad = 2;
+  double velocity_rad_s = 3;
+  double torque_nm = 4;
+  double temperature_c = 5;
+  uint32 fault_bits = 6;
+  bool feedback_fresh = 7;
+  double leader_position_rad = 8;
+}
+
+message RobotState {
+  int64 sampled_unix_ns = 1;
+  uint64 last_command_sequence = 2;
+  bool armed = 3;
+  bool estop = 4;
+  string stop_reason = 5;
+  repeated JointState joints = 6;
+  bool calibrated = 7;
+}
+
+message CommandResult {
+  bool accepted = 1;
+  uint64 sequence = 2;
+  string reason = 3;
+}
+
+message CancelRequest { string reason = 1; }
+message HeartbeatRequest { uint64 sequence = 1; int64 issued_unix_ns = 2; }
+message HeartbeatReply { bool alive = 1; int64 received_unix_ns = 2; }

@@ -1,0 +1,18 @@
+{
+  "type": "ChArUco",
+  "dictionary": "DICT_4X4_50",
+  "squares_x": 5,
+  "squares_y": 7,
+  "square_length_m": 0.024,
+  "marker_length_m": 0.018,
+  "outer_size_mm": [
+    120,
+    168
+  ],
+  "page_mm": [
+    210,
+    297
+  ],
+  "print_scale": "100% actual size; no fit-to-page",
+  "origin": "top-left of board, x right, y down in printed view"
+}

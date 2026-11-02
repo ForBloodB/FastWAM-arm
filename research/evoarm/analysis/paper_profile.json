@@ -1,0 +1,296 @@
+{
+  "source": "artifacts/submission_20261102/analysis/paper.csv",
+  "n_rows": 120,
+  "n_cols": 14,
+  "columns": {
+    "scene_id": {
+      "type": "unknown",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "mode": {
+      "type": "unknown",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "dt_s": {
+      "type": "continuous",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 120,
+      "mean": 6.250000000000003e-05,
+      "median": 6.25e-05,
+      "sd": 2.72187028370511e-20,
+      "min": 6.25e-05,
+      "max": 6.25e-05,
+      "skewness": -0.9875260779491498,
+      "skew_label": "moderately skewed",
+      "n_outliers_iqr": 0,
+      "outlier_lo": 6.25e-05,
+      "outlier_hi": 6.25e-05,
+      "needs_log_axis": "False"
+    },
+    "success": {
+      "type": "boolean",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 120,
+      "n_unique": 1,
+      "categories": [
+        [
+          "True",
+          120
+        ]
+      ],
+      "min_group_n": 120,
+      "max_group_n": 120,
+      "small_groups_flag": false
+    },
+    "failure": {
+      "type": "unknown",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "overclamp": {
+      "type": "boolean",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 120,
+      "n_unique": 1,
+      "categories": [
+        [
+          "False",
+          120
+        ]
+      ],
+      "min_group_n": 120,
+      "max_group_n": 120,
+      "small_groups_flag": false
+    },
+    "abort": {
+      "type": "boolean",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 120,
+      "n_unique": 1,
+      "categories": [
+        [
+          "False",
+          120
+        ]
+      ],
+      "min_group_n": 120,
+      "max_group_n": 120,
+      "small_groups_flag": false
+    },
+    "peak_N": {
+      "type": "continuous",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 120,
+      "mean": 0.8017063223566752,
+      "median": 0.6525955344603573,
+      "sd": 0.21191032787954756,
+      "min": 0.6447479707487336,
+      "max": 1.560231409129588,
+      "skewness": 0.8597416269042616,
+      "skew_label": "moderately skewed",
+      "n_outliers_iqr": 0,
+      "outlier_lo": 0.013580774034761767,
+      "outlier_hi": 1.7101354363773593,
+      "needs_log_axis": "False"
+    },
+    "overbudget_s": {
+      "type": "boolean",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 120,
+      "n_unique": 1,
+      "categories": [
+        [
+          "0.0",
+          120
+        ]
+      ],
+      "min_group_n": 120,
+      "max_group_n": 120,
+      "small_groups_flag": false
+    },
+    "duration_s": {
+      "type": "continuous",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 120,
+      "mean": 14.656916666714283,
+      "median": 14.61000000004739,
+      "sd": 0.14960337385233252,
+      "min": 14.30000000004591,
+      "max": 15.050000000049492,
+      "skewness": 0.5187774033006173,
+      "skew_label": "moderately skewed",
+      "n_outliers_iqr": 18,
+      "outlier_lo": 14.450000000046632,
+      "outlier_hi": 14.850000000048535,
+      "needs_log_axis": "False"
+    },
+    "initial_detection_valid": {
+      "type": "boolean",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 120,
+      "n_unique": 1,
+      "categories": [
+        [
+          "True",
+          120
+        ]
+      ],
+      "min_group_n": 120,
+      "max_group_n": 120,
+      "small_groups_flag": false
+    },
+    "common_start_digest": {
+      "type": "unknown",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "wall_job_s": {
+      "type": "continuous",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 120,
+      "mean": 13.055691524346669,
+      "median": 13.01794707775116,
+      "sd": 0.233577526511992,
+      "min": 12.639994621276855,
+      "max": 13.66947627067566,
+      "skewness": 0.7203508063307588,
+      "skew_label": "moderately skewed",
+      "n_outliers_iqr": 4,
+      "outlier_lo": 12.480774134397507,
+      "outlier_hi": 13.599053353071213,
+      "needs_log_axis": "False"
+    },
+    "trial_file": {
+      "type": "unknown",
+      "n_total": 120,
+      "n_null": 0,
+      "missing_rate": 0.0
+    }
+  },
+  "correlation": {
+    "columns": [
+      "dt_s",
+      "peak_N",
+      "duration_s",
+      "wall_job_s"
+    ],
+    "matrix": {
+      "dt_s": {
+        "dt_s": NaN,
+        "peak_N": NaN,
+        "duration_s": NaN,
+        "wall_job_s": NaN
+      },
+      "peak_N": {
+        "dt_s": NaN,
+        "peak_N": 1.0,
+        "duration_s": 0.076,
+        "wall_job_s": -0.054
+      },
+      "duration_s": {
+        "dt_s": NaN,
+        "peak_N": 0.076,
+        "duration_s": 1.0,
+        "wall_job_s": 0.13
+      },
+      "wall_job_s": {
+        "dt_s": NaN,
+        "peak_N": -0.054,
+        "duration_s": 0.13,
+        "wall_job_s": 1.0
+      }
+    },
+    "pairs_sorted": [
+      {
+        "a": "duration_s",
+        "b": "wall_job_s",
+        "r": 0.12959286870300685,
+        "magnitude": "weak"
+      },
+      {
+        "a": "dt_s",
+        "b": "peak_N",
+        "r": NaN,
+        "magnitude": "very strong"
+      },
+      {
+        "a": "dt_s",
+        "b": "duration_s",
+        "r": NaN,
+        "magnitude": "very strong"
+      },
+      {
+        "a": "dt_s",
+        "b": "wall_job_s",
+        "r": NaN,
+        "magnitude": "very strong"
+      },
+      {
+        "a": "peak_N",
+        "b": "duration_s",
+        "r": 0.07639941195029495,
+        "magnitude": "negligible"
+      },
+      {
+        "a": "peak_N",
+        "b": "wall_job_s",
+        "r": -0.054379971081562985,
+        "magnitude": "negligible"
+      }
+    ]
+  },
+  "group_summary": {
+    "by": [
+      "mode"
+    ],
+    "n_groups": 3,
+    "min_n_per_group": 40,
+    "max_n_per_group": 40,
+    "median_n_per_group": 40,
+    "small_groups_flag": false,
+    "tiny_groups_flag": false,
+    "per_group_counts": [
+      [
+        "baseline",
+        40
+      ],
+      [
+        "gentle",
+        40
+      ],
+      [
+        "gentle_recolored",
+        40
+      ]
+    ]
+  },
+  "warnings": [],
+  "suggestions": [
+    "分类 vs 连续，样本量充足 → 箱线图 / 小提琴图，或带误差棒的柱状图（误差棒说明 SD/SEM/CI）",
+    "≥3 个连续变量 → 相关性热力图（['dt_s', 'peak_N', 'duration_s', 'wall_job_s']）或 pairplot 散点矩阵"
+  ]
+}

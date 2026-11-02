@@ -1,0 +1,21 @@
+[Unit]
+Description=ReFlex leader/follower LAN workbench
+Wants=network-online.target reflex-leader-tunnel.service
+After=network-online.target reflex-leader-tunnel.service
+
+[Service]
+User=aup
+WorkingDirectory=/home/aup/reflex-arm/services/leader-follow
+ExecStart=/home/aup/reflex-arm/services/motorbridge-lan/.venv/bin/python web_server.py --bind 172.21.16.96 --port 3002
+Environment=PYTHONDONTWRITEBYTECODE=1
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+RestrictAddressFamilies=AF_INET AF_UNIX
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

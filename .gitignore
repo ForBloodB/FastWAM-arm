@@ -1,0 +1,51 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Build outputs
+build/
+dist/
+install/
+log/
+*.so
+*.dll
+*.dylib
+
+# Experiments and large local assets (root-level only)
+/runs/
+/outputs/
+/evaluate_results/
+/checkpoints/
+/data/
+/datasets/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.mp4
+*.zip
+*.tar
+*.tar.gz
+
+# Credentials and machine-local configuration
+.env
+.env.*
+*密码*
+*credential*
+*secret*
+*.pem
+*.key
+id_rsa*
+ssh_askpass.sh
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+NUL

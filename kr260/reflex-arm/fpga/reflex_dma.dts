@@ -1,0 +1,22 @@
+/dts-v1/;
+/plugin/;
+/ {
+ fragment@0 {target=<&fpga_full>;__overlay__ {
+  #address-cells=<2>;#size-cells=<2>;firmware-name="reflex-dma.bit.bin";
+  resets=<&zynqmp_reset 116>,<&zynqmp_reset 117>,<&zynqmp_reset 118>,<&zynqmp_reset 119>;
+ };};
+ fragment@1 {target=<&amba>;__overlay__ {
+  #address-cells=<2>;#size-cells=<2>;
+  reflex_dma: dma@a0020000 {
+   compatible="xlnx,axi-dma-1.00.a";reg=<0 0xa0020000 0 0x10000>;
+   #dma-cells=<1>;xlnx,addrwidth=<32>;xlnx,sg-length-width=<23>;
+   clocks=<&zynqmp_clk 71>,<&zynqmp_clk 71>,<&zynqmp_clk 71>;
+   clock-names="s_axi_lite_aclk","m_axi_mm2s_aclk","m_axi_s2mm_aclk";
+   interrupt-parent=<&gic>;interrupts=<0 89 4>,<0 90 4>;
+   dma-channel@a0020000 {compatible="xlnx,axi-dma-mm2s-channel";interrupts=<0 89 4>;xlnx,datawidth=<32>;xlnx,include-dre;};
+   dma-channel@a0020030 {compatible="xlnx,axi-dma-s2mm-channel";interrupts=<0 90 4>;xlnx,datawidth=<32>;xlnx,include-dre;};
+  };
+  reflex_dma_proxy {compatible="reflex,image-dma";dmas=<&reflex_dma 0>,<&reflex_dma 1>;dma-names="tx","rx";};
+  identity@a0010000 {compatible="generic-uio";linux,uio-name="reflex-dma-identity";reg=<0 0xa0010000 0 0x10000>;clocks=<&zynqmp_clk 71>;};
+ };};
+};

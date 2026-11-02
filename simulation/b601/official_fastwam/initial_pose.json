@@ -1,0 +1,47 @@
+{
+  "solver": "Seeed Pinocchio solve_ik with structured full-pose seeds",
+  "target_position_m": [
+    0.35,
+    -0.08,
+    0.28
+  ],
+  "target_rotation": [
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "seed_q": [
+    0.225,
+    0.6,
+    1.1,
+    -1.2,
+    0.0,
+    0.0
+  ],
+  "initial_q": [
+    0.2248839110108861,
+    1.8563855960440545,
+    1.8906904008086771,
+    -1.57,
+    2.67396267156772e-05,
+    0.2248867409598494
+  ],
+  "success": false,
+  "error": 0.12809349404178927,
+  "iterations": 20,
+  "structured_trials": 324,
+  "position_only": false,
+  "controlled_joints": 6
+}

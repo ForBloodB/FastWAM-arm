@@ -1,0 +1,25 @@
+mode: diagnostic_only
+ai_pc: 172.21.16.96
+kr260: 172.21.16.34
+udp_port: 47000
+robot: SEEED_B601_RS
+camera: Orbbec_Gemini_305
+camera_factory_parameters: configs/camera_factory.json
+camera_mount: eye_in_hand
+camera_mount_confirmed_by_user: true
+camera_tool_frame: gripper_end
+camera_extrinsic_status: awaiting_printed_target_and_pose_samples
+camera_to_tool: null
+ros_action: /rebotarm/move_to_pose
+frame: base_link
+# All values below require measurement/calibration before physical operation.
+hardware_calibrated: false
+camera_to_base: null
+joint_limits_rad: null
+gripper_current_to_force: null
+collision_model_validated: false
+pl_register_map_verified: false
+pl_diagnostic_register_map_verified: true
+pl_app: reflex-diagnostic
+pl_diagnostic_signature: 0x5246
+physical_estop_verified: false

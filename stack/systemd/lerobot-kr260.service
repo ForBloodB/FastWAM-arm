@@ -1,0 +1,33 @@
+[Unit]
+Description=LeRobot KR260 guarded arm executor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+SupplementaryGroups=dialout
+WorkingDirectory=/opt/lerobot-fastwam/kr260
+Environment=PYTHONPATH=/opt/lerobot-fastwam/kr260:/opt/lerobot-fastwam/common
+Environment=KRIA_GRPC_BIND=172.21.16.91:50051
+Environment=KRIA_ALLOWED_JOINTS=
+ExecStart=/home/ubuntu/b601-official-venv/bin/python /opt/lerobot-fastwam/kr260/robot_service.py
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_CAN
+AmbientCapabilities=CAP_NET_RAW
+CapabilityBoundingSet=CAP_NET_RAW
+DevicePolicy=closed
+DeviceAllow=/dev/ttyUSB0 rw
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

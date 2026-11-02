@@ -1,0 +1,56 @@
+/dts-v1/;
+/plugin/;
+/ {
+    fragment@0 {
+        target = <&fpga_full>;
+        __overlay__ {
+            #address-cells = <2>;
+            #size-cells = <2>;
+            firmware-name = "reflex-diagnostic.bit.bin";
+            resets = <&zynqmp_reset 116>, <&zynqmp_reset 117>, <&zynqmp_reset 118>, <&zynqmp_reset 119>;
+        };
+    };
+    fragment@1 {
+        target = <&amba>;
+        __overlay__ {
+            #address-cells = <2>;
+            #size-cells = <2>;
+            reflex_control: reflex-control@a0000000 {
+                compatible = "generic-uio";
+                linux,uio-name = "reflex-control";
+                reg = <0 0xa0000000 0 0x10000>;
+                clocks = <&zynqmp_clk 71>;
+                clock-names = "s_axi_aclk";
+                status = "okay";
+            };
+            reflex_stats: reflex-stats@a0010000 {
+                compatible = "generic-uio";
+                linux,uio-name = "reflex-stats";
+                reg = <0 0xa0010000 0 0x10000>;
+                clocks = <&zynqmp_clk 71>;
+                status = "okay";
+            };
+            reflex_clock: reflex-clock@a0020000 {
+                compatible = "generic-uio";
+                linux,uio-name = "reflex-clock";
+                reg = <0 0xa0020000 0 0x10000>;
+                clocks = <&zynqmp_clk 71>;
+                status = "okay";
+            };
+            reflex_period: reflex-period@a0030000 {
+                compatible = "generic-uio";
+                linux,uio-name = "reflex-period";
+                reg = <0 0xa0030000 0 0x10000>;
+                clocks = <&zynqmp_clk 71>;
+                status = "okay";
+            };
+            reflex_fault: reflex-fault@a0040000 {
+                compatible = "generic-uio";
+                linux,uio-name = "reflex-fault";
+                reg = <0 0xa0040000 0 0x10000>;
+                clocks = <&zynqmp_clk 71>;
+                status = "okay";
+            };
+        };
+    };
+};

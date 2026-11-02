@@ -1,0 +1,34 @@
+{
+  "model": "B601-RS / J6",
+  "control_mode": "CSP (run_mode=5)",
+  "candidate_speed_kp": 2.5,
+  "original_speed_kp": 5.0,
+  "register": "0x701F",
+  "current_limit_A": 0.6,
+  "torque_limit_Nm": 0.5,
+  "reference_speed_limit_deg_s": 0.25,
+  "encoder_guard_limit_deg_s": 3.0,
+  "watchdog_ms": 100,
+  "flash_writes": 0,
+  "validation_status": "positive_only_reverse_guard_unresolved",
+  "independent_sensor_root_cause_proven": false,
+  "register_source": "https://github.com/RobStride/Python_Sample/blob/main/robstride_dynamics/protocol.py",
+  "verified_excursion_deg": 1.0,
+  "repeat_cycles_passed": 10,
+  "scope": "Positive unloaded CSP excursions <=1 degree passed; negative 0.5 degree failed position envelope. No larger or calibration motion released.",
+  "default_in_guarded_bench": true,
+  "ram_gain_adopted": true,
+  "flash_persistence": false,
+  "overall_repair_passed": false,
+  "qualified_directions": [
+    1
+  ],
+  "calibration_motion_allowed": false,
+  "gain_adoption_allowed": false,
+  "unresolved_findings": [
+    "J6 negative 0.5 deg crossed 0.9 deg position envelope at 4.950 s",
+    "J5 positive 2 deg remains below predeclared tracking amplitude"
+  ],
+  "failed_case": "runs/eih_wrist_20261020/negfix_wrist_j6_neg_0p5deg",
+  "qualification_invalidation": "Later reverse failure limits earlier positive-only repeat10 evidence; no Flash writes"
+}

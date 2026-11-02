@@ -1,0 +1,275 @@
+{
+  "source": "artifacts/submission_20261102/analysis/rl.csv",
+  "n_rows": 480,
+  "n_cols": 13,
+  "columns": {
+    "scene_id": {
+      "type": "unknown",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "mode": {
+      "type": "unknown",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "learner_seed": {
+      "type": "ordinal",
+      "n_total": 480,
+      "n_null": 120,
+      "missing_rate": 0.25,
+      "n": 360,
+      "n_unique": 3,
+      "categories": [
+        [
+          "11.0",
+          120
+        ],
+        [
+          "23.0",
+          120
+        ],
+        [
+          "37.0",
+          120
+        ]
+      ],
+      "min_group_n": 120,
+      "max_group_n": 120,
+      "small_groups_flag": false
+    },
+    "material": {
+      "type": "unknown",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "action": {
+      "type": "unknown",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0
+    },
+    "success": {
+      "type": "boolean",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 480,
+      "n_unique": 2,
+      "categories": [
+        [
+          "False",
+          246
+        ],
+        [
+          "True",
+          234
+        ]
+      ],
+      "min_group_n": 234,
+      "max_group_n": 246,
+      "small_groups_flag": false
+    },
+    "overclamp": {
+      "type": "boolean",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 480,
+      "n_unique": 1,
+      "categories": [
+        [
+          "False",
+          480
+        ]
+      ],
+      "min_group_n": 480,
+      "max_group_n": 480,
+      "small_groups_flag": false
+    },
+    "abort": {
+      "type": "boolean",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 480,
+      "n_unique": 1,
+      "categories": [
+        [
+          "False",
+          480
+        ]
+      ],
+      "min_group_n": 480,
+      "max_group_n": 480,
+      "small_groups_flag": false
+    },
+    "peak_N": {
+      "type": "continuous",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 480,
+      "mean": 12.589130809650827,
+      "median": 15.133719760415998,
+      "sd": 5.058048406727839,
+      "min": 1.0831140884776185,
+      "max": 15.68291797056563,
+      "skewness": -1.500244944558594,
+      "skew_label": "highly skewed",
+      "n_outliers_iqr": 96,
+      "outlier_lo": 12.782094812051092,
+      "outlier_hi": 16.929871643721384,
+      "needs_log_axis": "False"
+    },
+    "overbudget_s": {
+      "type": "boolean",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 480,
+      "n_unique": 1,
+      "categories": [
+        [
+          "0.0",
+          480
+        ]
+      ],
+      "min_group_n": 480,
+      "max_group_n": 480,
+      "small_groups_flag": false
+    },
+    "budget_N": {
+      "type": "ordinal",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 480,
+      "n_unique": 3,
+      "categories": [
+        [
+          "20.0",
+          384
+        ],
+        [
+          "12.0",
+          64
+        ],
+        [
+          "3.0",
+          32
+        ]
+      ],
+      "min_group_n": 32,
+      "max_group_n": 384,
+      "small_groups_flag": false
+    },
+    "duration_s": {
+      "type": "continuous",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0,
+      "n": 480,
+      "mean": 17.757041666669124,
+      "median": 17.190000000023613,
+      "sd": 4.031713840320817,
+      "min": 14.330000000046054,
+      "max": 30.7399999997032,
+      "skewness": 2.5204646081851325,
+      "skew_label": "highly skewed",
+      "n_outliers_iqr": 138,
+      "outlier_lo": 14.798750000080158,
+      "outlier_hi": 19.008749999980605,
+      "needs_log_axis": "False"
+    },
+    "failure": {
+      "type": "unknown",
+      "n_total": 480,
+      "n_null": 0,
+      "missing_rate": 0.0
+    }
+  },
+  "correlation": {
+    "columns": [
+      "peak_N",
+      "duration_s"
+    ],
+    "matrix": {
+      "peak_N": {
+        "peak_N": 1.0,
+        "duration_s": 0.401
+      },
+      "duration_s": {
+        "peak_N": 0.401,
+        "duration_s": 1.0
+      }
+    },
+    "pairs_sorted": [
+      {
+        "a": "peak_N",
+        "b": "duration_s",
+        "r": 0.4009594597338504,
+        "magnitude": "moderate"
+      }
+    ]
+  },
+  "group_summary": {
+    "by": [
+      "mode",
+      "learner_seed"
+    ],
+    "n_groups": 8,
+    "min_n_per_group": 60,
+    "max_n_per_group": 60,
+    "median_n_per_group": 60,
+    "small_groups_flag": false,
+    "tiny_groups_flag": false,
+    "per_group_counts": [
+      [
+        "('B_zero', nan)",
+        60
+      ],
+      [
+        "('C_frozen', 11.0)",
+        60
+      ],
+      [
+        "('C_frozen', 23.0)",
+        60
+      ],
+      [
+        "('C_frozen', 37.0)",
+        60
+      ],
+      [
+        "('D_online', 11.0)",
+        60
+      ],
+      [
+        "('D_online', 23.0)",
+        60
+      ],
+      [
+        "('D_online', 37.0)",
+        60
+      ],
+      [
+        "('F_fixed', nan)",
+        60
+      ]
+    ]
+  },
+  "warnings": [
+    "列 'learner_seed' 缺失率 25% — 画图前考虑是否填补、剔除、或在图注中交代。"
+  ],
+  "suggestions": [
+    "分类 vs 连续，样本量充足 → 箱线图 / 小提琴图，或带误差棒的柱状图（误差棒说明 SD/SEM/CI）",
+    "两连续变量 peak_N vs duration_s → 散点图（含回归拟合 + r 值）",
+    "分类维度组合数 = 18（learner_seed, success, overclamp, abort, overbudget_s, budget_N 全交叉），**一张图塞不下**——建议按某一维拆成多面板，或选择子集。",
+    "peak_N 高度偏态（skew=-1.50）→ 考虑对数变换或小提琴图代替均值柱图",
+    "duration_s 高度偏态（skew=2.52）→ 考虑对数变换或小提琴图代替均值柱图"
+  ]
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "1812.03201v2",
+    "title": "Residual Reinforcement Learning for Robot Control",
+    "authors": [
+      "Tobias Johannink",
+      "Shikhar Bahl",
+      "Ashvin Nair",
+      "Jianlan Luo",
+      "Avinash Kumar",
+      "Matthias Loskyll",
+      "Juan Aparicio Ojea",
+      "Eugen Solowjow",
+      "Sergey Levine"
+    ],
+    "year": "2018"
+  },
+  {
+    "id": "1708.08611v2",
+    "title": "Safe Reinforcement Learning via Shielding",
+    "authors": [
+      "Mohammed Alshiekh",
+      "Roderick Bloem",
+      "Ruediger Ehlers",
+      "Bettina Könighofer",
+      "Scott Niekum",
+      "Ufuk Topcu"
+    ],
+    "year": "2017"
+  },
+  {
+    "id": "1812.06298v2",
+    "title": "Residual Policy Learning",
+    "authors": [
+      "Tom Silver",
+      "Kelsey Allen",
+      "Josh Tenenbaum",
+      "Leslie Kaelbling"
+    ],
+    "year": "2018"
+  },
+  {
+    "id": "2108.13264v4",
+    "title": "Deep Reinforcement Learning at the Edge of the Statistical Precipice",
+    "authors": [
+      "Rishabh Agarwal",
+      "Max Schwarzer",
+      "Pablo Samuel Castro",
+      "Aaron Courville",
+      "Marc G. Bellemare"
+    ],
+    "year": "2021"
+  },
+  {
+    "id": "2401.16013v4",
+    "title": "SERL: A Software Suite for Sample-Efficient Robotic Reinforcement Learning",
+    "authors": [
+      "Jianlan Luo",
+      "Zheyuan Hu",
+      "Charles Xu",
+      "You Liang Tan",
+      "Jacob Berg",
+      "Archit Sharma",
+      "Stefan Schaal",
+      "Chelsea Finn",
+      "Abhishek Gupta",
+      "Sergey Levine"
+    ],
+    "year": "2024"
+  }
+]

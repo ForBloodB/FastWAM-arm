@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/reflex-arm/fpga/dma_driver/reflex_image_dma.ko := ld -r -EL  -maarch64elf -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/ubuntu/reflex-arm/fpga/dma_driver/reflex_image_dma.ko /home/ubuntu/reflex-arm/fpga/dma_driver/reflex_image_dma.o /home/ubuntu/reflex-arm/fpga/dma_driver/reflex_image_dma.mod.o;  true

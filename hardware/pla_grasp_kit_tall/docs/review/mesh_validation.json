@@ -1,0 +1,54 @@
+{
+  "units": "mm",
+  "blender": "5.2.0 LTS",
+  "parts": [
+    {
+      "name": "01_高位带指槽抓取块",
+      "file": "stl/01_grip_block_36x30x70mm.stl",
+      "dimensions_mm": [
+        36.0,
+        30.0,
+        70.0
+      ],
+      "nonmanifold_edges": 0,
+      "volume_mm3": 73792.105,
+      "triangles": 1612
+    },
+    {
+      "name": "02_高位带头导向圆柱销",
+      "file": "stl/02_peg_d16_h80mm.stl",
+      "dimensions_mm": [
+        26.0,
+        26.0,
+        80.0
+      ],
+      "nonmanifold_edges": 0,
+      "volume_mm3": 23942.777,
+      "triangles": 1152
+    },
+    {
+      "name": "03_高位盲孔插装座",
+      "file": "stl/03_socket_50x50x50mm_hole16p4.stl",
+      "dimensions_mm": [
+        50.0,
+        50.0,
+        50.0
+      ],
+      "nonmanifold_edges": 0,
+      "volume_mm3": 121453.179,
+      "triangles": 2606
+    },
+    {
+      "name": "04_高位浅槽分拣托盘",
+      "file": "stl/04_sorting_tray_80x65x40mm.stl",
+      "dimensions_mm": [
+        80.0,
+        65.0,
+        40.0
+      ],
+      "nonmanifold_edges": 0,
+      "volume_mm3": 194458.09,
+      "triangles": 612
+    }
+  ]
+}

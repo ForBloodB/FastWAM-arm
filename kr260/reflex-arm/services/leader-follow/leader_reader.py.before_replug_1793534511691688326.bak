@@ -1,0 +1,78 @@
+"""FashionStar query-only serial reader; no unlock, origin or motor writes.
+
+Protocol: motorbridge-smart-servo/smart_servo_vendors/fashionstar/src/protocol.rs.
+Only command 16 is emitted. Successful packets (ID, checksum, length, command)
+are distinguished from cached SDK values. Zero confirmation stays latched until
+the angle leaves zero. All timestamps use the monotonic clock.
+"""
+import math,os,select,struct,time
+
+
+def request(sid):
+    if type(sid) is not int or sid not in range(7):raise ValueError('Invalid leader ID')
+    data=bytes([0x12,0x4c,16,1,sid]);return data+bytes([sum(data)&255])
+
+
+def decode(packet,sid):
+    if len(packet)!=12 or packet[:4]!=bytes([5,28,16,7]) or packet[4]!=sid or sum(packet[:-1])&255!=packet[-1]:
+        raise ValueError('Invalid angle packet')
+    return struct.unpack_from('<i',packet,5)[0]/10.
+
+
+class Quality:
+    def __init__(self):self.last=None;self.at=None;self.zero_since=None;self.zero_valid=False;self.fault=False
+    def update(self,value,now):
+        if not math.isfinite(value) or abs(value)>720:raise ValueError('Leader outside commissioning range')
+        if self.fault:return self.last if self.last is not None else 0.,False,'角度跳变已锁定，请重新连接读数'
+        if self.at is not None and (now<=self.at or now-self.at>.3):
+            self.last=None;self.zero_since=None;self.zero_valid=False
+        near=abs(value)<=.21
+        if self.last is not None and abs(value-self.last)>max(2.,120.*(now-self.at)):
+            self.fault=True;return self.last,False,'主臂角度跳变'
+        self.at=now
+        if near:
+            if self.last is not None and abs(self.last)<=1. and abs(value-self.last)<=.5:self.zero_valid=True
+            # Do not clear the confirmation timer once the zero is confirmed.
+            if self.zero_since is None:self.zero_since=now
+            if not self.zero_valid and now-self.zero_since<.7:return self.last if self.last is not None else 0.,False,'零位稳定确认中'
+            self.zero_valid=True
+        else:self.zero_since=None;self.zero_valid=False
+        self.last=value;return value,True,'原始应答校验通过'
+
+
+class LeaderReader:
+    def __init__(self,port='/dev/ttyUSB0'):
+        import termios,fcntl
+        self.termios=termios;self.fd=os.open(port,os.O_RDWR|os.O_NOCTTY|os.O_NONBLOCK)
+        try:
+            fcntl.ioctl(self.fd,termios.TIOCEXCL)
+            attr=termios.tcgetattr(self.fd)
+            attr[0]=0;attr[1]=0;attr[2]=termios.CS8|termios.CREAD|termios.CLOCAL;attr[3]=0
+            attr[4]=termios.B1000000;attr[5]=termios.B1000000
+            attr[6][termios.VMIN]=0;attr[6][termios.VTIME]=0
+            termios.tcsetattr(self.fd,termios.TCSANOW,attr)
+            self.quality={i:Quality() for i in range(7)}
+        except BaseException:os.close(self.fd);raise
+    def close(self):os.close(self.fd)
+    def read(self,sid,timeout=.018):
+        self.termios.tcflush(self.fd,self.termios.TCIFLUSH)
+        raw=request(sid)
+        if os.write(self.fd,raw)!=len(raw):raise IOError('Partial UART query')
+        end=time.monotonic()+timeout;buf=bytearray()
+        while time.monotonic()<end:
+            if not select.select([self.fd],[],[],max(0.,end-time.monotonic()))[0]:break
+            buf.extend(os.read(self.fd,128))
+            while len(buf)>=5:
+                start=buf.find(b'\x05\x1c')
+                if start<0:buf[:]=buf[-1:];break
+                if start:del buf[:start]
+                if len(buf)<5:break
+                length=buf[3]+5
+                if len(buf)<length:break
+                packet=bytes(buf[:length]);del buf[:length]
+                try:value=decode(packet,sid)
+                except ValueError:continue
+                now=time.monotonic();filtered,reliable,note=self.quality[sid].update(value,now)
+                return dict(id=sid,raw_deg=value,filtered_deg=filtered,reliable=reliable,
+                    sample_time=now,quality_note=note,packet_hex=packet.hex(),transport_fresh=True)
+        raise TimeoutError(f'ID {sid} 无有效串口应答')

@@ -1,0 +1,22 @@
+[Unit]
+Description=ReFlex leader query and shadow preview (no actuation)
+After=network.target systemd-tmpfiles-setup.service
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/reflex-arm/services/leader-follow
+ExecStart=/home/ubuntu/reflex-arm/.venv-leader/bin/python board_server.py --out /home/ubuntu/reflex-arm/runs/leader_web_20261031
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/ubuntu/reflex-arm/runs/leader_web_20261031
+ReadWritePaths=/tmp/reflex-leader-read.lock /tmp/reflex-can-actuation.lock
+RestrictAddressFamilies=AF_INET AF_UNIX AF_CAN AF_NETLINK
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

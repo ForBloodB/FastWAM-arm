@@ -1,0 +1,19 @@
+[Unit]
+Description=MotorBridge KR260 loopback gateway with exclusive actuation lock
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/reflex-arm
+ExecStart=/usr/bin/flock -n /tmp/reflex-can-actuation.lock /home/ubuntu/reflex-arm/.vendor/motorbridge/bin/ws_gateway --bind 127.0.0.1:9002
+Environment=TOKIO_WORKER_THREADS=2
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=read-only
+RestrictAddressFamilies=AF_INET AF_UNIX AF_CAN AF_NETLINK
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

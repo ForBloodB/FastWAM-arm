@@ -1,0 +1,48 @@
+{
+  "solver": "Official Seeed Pinocchio FK of previously stable six-joint configuration",
+  "method": "fixed_configuration_fk_not_pregrasp_ik",
+  "target_position_m": [
+    0.39633521599019916,
+    -0.14541435008686618,
+    0.3925795185865059
+  ],
+  "target_rotation": [
+    [
+      0.641708348123984,
+      0.6607268498718665,
+      -0.3894231962870058
+    ],
+    [
+      -0.7173550943022867,
+      0.6967077354779413,
+      1.9381502287813292e-06
+    ],
+    [
+      0.2713154338155969,
+      0.2793534699687811,
+      0.9210589417566375
+    ]
+  ],
+  "seed_q": [
+    0.0,
+    1.3,
+    0.7,
+    1.0,
+    -0.8,
+    0.0
+  ],
+  "initial_q": [
+    0.0,
+    1.3,
+    0.7,
+    1.0,
+    -0.8,
+    0.0
+  ],
+  "success": true,
+  "error": 0.0,
+  "iterations": 0,
+  "position_only": false,
+  "controlled_joints": 6,
+  "note": "Unreachable strict vertical pregrasp attempts are recorded separately in initial_pose.json"
+}

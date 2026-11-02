@@ -1,0 +1,19 @@
+/dts-v1/;
+/plugin/;
+/ {
+ fragment@0 { target = <&fpga_full>; __overlay__ {
+  #address-cells=<2>; #size-cells=<2>; firmware-name="reflex-vision.bit.bin";
+  resets=<&zynqmp_reset 116>,<&zynqmp_reset 117>,<&zynqmp_reset 118>,<&zynqmp_reset 119>;
+ }; };
+ fragment@1 { target=<&amba>; __overlay__ {
+  #address-cells=<2>; #size-cells=<2>;
+  reflex_vision_input: reflex-vision-input@a0000000 {
+   compatible="generic-uio";linux,uio-name="reflex-vision-input";
+   reg=<0 0xa0000000 0 0x10000>;clocks=<&zynqmp_clk 71>;status="okay";
+  };
+  reflex_vision_output: reflex-vision-output@a0010000 {
+   compatible="generic-uio";linux,uio-name="reflex-vision-output";
+   reg=<0 0xa0010000 0 0x10000>;clocks=<&zynqmp_clk 71>;status="okay";
+  };
+ }; };
+};

@@ -1,0 +1,22 @@
+{
+  "solver": "Seeed Pinocchio alternate-approach seed; fitted-head grasp target",
+  "success": true,
+  "position_only": false,
+  "target_position_m": [0.35, -0.08, 0.206],
+  "target_rotation": [
+    [0.6427876096865393, 0.0, 0.766044443118978],
+    [0.0, 1.0, 0.0],
+    [-0.766044443118978, 0.0, 0.6427876096865393]
+  ],
+  "initial_q": [
+    0.34896693014000213,
+    1.231993524645981,
+    1.0278502193521593,
+    -0.6989067251100675,
+    0.22159961492182584,
+    0.2717856970411956
+  ],
+  "yaw_deg": 0,
+  "tilt_deg": 40,
+  "geometry_note": "Target corresponds to the RGB-D fitted enlarged head, not an exact CAD measurement"
+}

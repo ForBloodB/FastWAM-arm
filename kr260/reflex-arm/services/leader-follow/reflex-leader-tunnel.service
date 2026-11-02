@@ -1,0 +1,18 @@
+[Unit]
+Description=Private leader API forwarding from AI PC to KR260
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=aup
+ExecStart=/usr/bin/ssh -NT -o BatchMode=yes -o StrictHostKeyChecking=yes -o ExitOnForwardFailure=yes -o ServerAliveInterval=10 -o ServerAliveCountMax=3 -o IdentitiesOnly=yes -i /home/aup/.ssh/reflex_leader_web_tunnel -L 127.0.0.1:19010:127.0.0.1:9010 ubuntu@172.21.16.34
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+RestrictAddressFamilies=AF_INET AF_UNIX
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
